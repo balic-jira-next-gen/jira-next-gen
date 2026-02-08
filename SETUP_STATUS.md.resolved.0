@@ -1,0 +1,32 @@
+# Environment Setup Status
+
+## Completed Actions
+-   ✅ **Project Scaffolding**: Created `backend` (Go) and `frontend` (Next.js) directories.
+-   ✅ **Go Installation**: Installed Go 1.25.7 via `winget`.
+-   ✅ **Database Configuration**: Created [docker-compose.yml](file:///C:/Users/mayur/.gemini/antigravity/scratch/jira_next_gen/docker-compose.yml) for PostgreSQL.
+
+## Pending Actions (User Intervention Required)
+
+### 1. Restart Terminal
+-   **Why**: To pick up the new [go](file:///C:/Users/mayur/.gemini/antigravity/scratch/jira_next_gen/backend/main.go) command in your PATH.
+-   **Action**: Close this terminal/VS Code window and open a new one.
+
+### 2. Start Docker
+-   **Why**: The Docker daemon is not running, so the database cannot start.
+-   **Action**: Launch "Docker Desktop" from your Start Menu.
+-   **Verify**: Run `docker info` in a terminal to confirm it's running.
+
+### 3. Initialize Backend
+After restarting terminal:
+```bash
+cd backend
+go mod tidy
+go run main.go
+```
+
+### 4. Start Frontend
+The frontend installation might still be finishing in the background. Once done:
+```bash
+cd frontend
+npm run dev
+```

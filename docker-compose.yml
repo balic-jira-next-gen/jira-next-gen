@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: jira_next_gen_db
+    environment:
+      POSTGRES_USER: jira_user
+      POSTGRES_PASSWORD: jira_password
+      POSTGRES_DB: jira_next_gen
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
